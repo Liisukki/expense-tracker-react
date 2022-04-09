@@ -1,17 +1,17 @@
-import { AddTransaction } from "../components/AddTransaction";
+import { AddCar } from "../components/AddCar";
 
 export default (state, action) => {
     switch (action.type) {
         case 'DELETE_TRANSACTION':
             return {
                 ...state,
-                transactions: state.transactions
-                    .filter(transaction => transaction.id !== action.payload)
+                cars: state.cars
+                    .filter(car => car.id !== action.payload)
             }
         case 'ADD_TRANSACTION':
             return {
                 ...state,
-                transactions: [action.payload, ...state.transactions]
+                cars: [action.payload, ...state.cars]
             }
         default:
             return state;
